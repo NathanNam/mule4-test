@@ -1,0 +1,19 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:cookbook="http://www.mulesoft.org/schema/mule/cookbook"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+          http://www.mulesoft.org/schema/mule/cookbook http://www.mulesoft.org/schema/mule/cookbook/current/mule-cookbook.xsd">
+
+    <cookbook:config name="cookbook-config" configId="configId">
+        <cookbook:connection requiredParameter="aValue" />
+    </cookbook:config>
+
+    <flow name="sayHiFlow">
+        <cookbook:say-hi person="Mariano Gonzales"/>
+    </flow>
+
+    <flow name="retrieveInfoFlow">
+        <cookbook:retrieve-info config-ref="cookbook-config"/>
+    </flow>
+
+</mule>
